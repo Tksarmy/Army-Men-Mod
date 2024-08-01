@@ -1,0 +1,39 @@
+Version = -1
+SARGE KEYS:
+Number of Sarge Keys = 17
+Key 0: "Forward" 17 "W"Fixed 0 "undefined"
+Key 1: "Left" 30 "A"Fixed 0 "undefined"
+Key 2: "Right" 32 "D"Fixed 0 "undefined"
+Key 3: "Back" 31 "S"Fixed 0 "undefined"
+Key 4: "Roll Left" 16 "Q"Fixed 0 "undefined"
+Key 5: "Roll Right" 18 "E"Fixed 0 "undefined"
+Key 6: "Dive" 19 "R"Fixed 0 "undefined"
+Key 7: "Kneel/Prone" 54 "RSHIFT"Fixed 0 "undefined"
+Key 8: "Slow" 42 "LSHIFT"Fixed 42 "LSHIFT"
+Key 9: "Fire" 57 "SPACE"Fixed 57 "SPACE"
+Key 10: "Gun Left" 51 "COMMA"Fixed 0 "undefined"
+Key 11: "Gun Right" 52 "PERIOD"Fixed 0 "undefined"
+Key 12: "Main Weapon" 2 "1"Fixed 0 "undefined"
+Key 13: "Heavy Weapon" 3 "2"Fixed 0 "undefined"
+Key 14: "Special Item" 4 "3"Fixed 0 "undefined"
+Key 15: "Enter Vehicle" 0 "undefined"Fixed 62 "F4"
+Key 16: "Drop Item" 0 "undefined"Fixed 66 "F8"
+GAME PLAY KEYS:
+Number of Game Play Keys = 15
+Key 0: "Follow" 59 "F1"Fixed 59 "F1"
+Key 1: "Attack" 60 "F2"Fixed 60 "F2"
+Key 2: "Defend" 61 "F3"Fixed 61 "F3"
+Key 3: "Attack Now" 0 "undefined"Fixed 67 "undefined"
+Key 4: "Defend Now" 33 "F"Fixed 68 "F"
+Key 5: "Next Unit" 15 "TAB"Fixed 0 "TAB"
+Key 6: "Air Strike" 0 "undefined"Fixed 63 "undefined"
+Key 7: "Air Paratroop" 25 "P"Fixed 64 "P"
+Key 8: "Air Recon" 0 "undefined"Fixed 65 "undefined"
+Key 9: "Scroll" 28 "RETURN"Fixed 0 "RETURN"
+Key 10: "Chat" 14 "BACKSPACE"Fixed 0 "BACKSPACE"
+Key 11: "Objective" 24 "O"Fixed 87 "O"
+Key 12: "View Map" 47 "V"Fixed 88 "V"
+Key 13: "Change Gunsight" 34 "G"Fixed 0 "G"
+Key 14: "Mouse Button 2" 50 "M"Fixed 0 "M"
+Mouse DX Rotate = 1
+Mouse Turret    = 0

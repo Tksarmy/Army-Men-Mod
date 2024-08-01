@@ -1,0 +1,111 @@
+//
+//	DESERT 
+//	Map #1
+//	Mission #1
+//
+////////////////////////
+
+//PAD
+PAD GreenBase		30		Green		> 0		//Green Units that will hold position
+PAD TanAttack		15		Tan		> 0		//Tan Attackers on GreenBase 
+PAD GreenDefense	10		Green		> 0		//GreenSoldier1
+PAD GreenDefense2	20		Green		> 0
+PAD BlueEscape		40		Blue		> 0
+PAD TBase		60		TanSoldierR1	> 0
+PAD TBase2		16		Tan		> 0
+PAD TBase3		70		Tan		> 0	
+PAD TASPOT		17		Tan		> 0
+PAD GTent		50		Green		> 0
+PAD RadioT		80		Tan		> 0
+PAD RadioBase		75		Tan		> 0
+PAD GreenDefense3	72		Green		> 0
+PAD DEADZONE		78		Green		> 0
+
+// endgames
+IF killed_GreenSarge THEN
+	TRIGGERDELAY 1 tanwins
+
+IF killed_TanMortarSquad THEN
+	TRIGGERDELAY 1 greenwins
+
+
+
+//INIT
+
+IF startup THEN
+	VULNERABLESARGE,
+	TRIGGER GDEFENDER,
+	TRIGGER BYEBYE,
+	TRIGGER GRUSH
+
+IF GDEFENDER THEN
+	SETAICONTROL GreenRifle103,
+	SETAICONTROL GreenRifle102,
+	SETAICONTROL GDefender3
+	
+IF BYEBYE THEN
+	UNDEPLOY GreenRifle4,
+	UNDEPLOY GreenRifle1,
+	UNDEPLOY GDefender1,
+	UNDEPLOY GreenRifle2,
+	UNDEPLOY GDefender2,
+	UNDEPLOY GreenRifle5,
+	UNDEPLOY TanSoldierR2,
+	UNDEPLOY TanSoldierR1,
+	UNDEPLOY TanRifle4,
+	UNDEPLOY TanRifle2,
+	UNDEPLOY TanRifle7,
+	UNDEPLOY TanRifle3,
+	UNDEPLOY TanLEAVE,
+	UNDEPLOY TanMortar1,
+	UNDEPLOY GreenRein1
+
+IF killed_TBait1 THEN
+	TRIGGERDELAY 3 TAmbush
+
+ IF TAmbush THEN
+	DEPLOY TanAmbush1 ATMODE ATTACK,
+	SETAICONTROL TanAmbush1,
+	ORDER TanAmbush1 GOTO GreenSarge INMODE ATTACK THEN ATMODE ATTACK
+
+
+IF killed_TanRifle110 THEN	
+	REMOVEOBJECT MEDIC,
+	PLACEOBJECT MEDIC TanRifle110
+	
+
+
+//BOTTOM LEFT OF MAP RESPAWN
+IF GRUSH THEN
+	ORDER GDefender3 GOTO DEADZONE INMODE DEFEND THEN ATMODE DEFEND
+
+IF ALLOF killed_GDefender3 THEN
+	TRIGGERDELAY 8 GRES3
+
+IF GRES3 THEN
+	RESURRECT GDefender3 GreenDefense3,
+	ORDER GDefender3 GOTO DEADZONE INMODE DEFEND THEN ATMODE DEFEND
+
+IF get_GreenSarge_HELLO1 THEN
+	SHOWBMP "D12mid.bmp",
+	TRIGGER GREYFRIENDS
+
+IF GREYFRIENDS THEN
+	DEPLOY GrayRifle1 ATMODE DEFEND,
+	SETUSERCONTROL GrayRifle1
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+

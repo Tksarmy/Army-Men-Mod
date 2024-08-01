@@ -1,0 +1,73 @@
+
+//
+//	DESERT 
+//	Map #1
+//	Mission #2
+//
+////////////////////
+
+//PAD
+PAD GreenBase		30		Green		> 0		//Green Units that will hold position
+PAD TanAttack		15		Tan		> 0		//Tan Attackers on GreenBase 
+PAD GreenDefense	10		Green		> 0		//GreenSoldier1
+PAD GreenDefense2	20		Green		> 0
+PAD BlueEscape		40		Blue		> 0
+PAD TBase		60		TanSoldierR1	> 0
+PAD TBase2		16		Tan		> 0
+PAD TBase3		70		Tan		> 0	
+PAD TASPOT		17		Tan		> 0
+PAD GTent		50		Green		> 0
+PAD RadioT		80		Tan		> 0
+PAD RadioBase		75		Tan		> 0
+PAD GreenDefense3	72		Green		> 0
+PAD DEADZONE		78		Green		> 0
+PAD GREENASSAULT	95		Green		> 0
+
+IF startup THEN
+	SETAICONTROL GEXPLO,
+	SETAICONTROL GreenRifle102,
+	SETAICONTROL GreenRifle103,
+	SETAICONTROL GDefender3,
+	SETAICONTROL GreenRifle5,
+	SETAICONTROL GreenRifle201
+	
+	
+	
+
+IF GREENWIN THEN
+	TRIGGERDELAY 1 greenwins
+
+IF killed_GreenSarge THEN
+	TRIGGERDELAY 1 tanwins
+
+IF get_GreenSarge_Tflag THEN
+	REMOVEOBJECT Tflag,
+	REMOVEOBJECT Gflag,
+	PLACEOBJECT Gflag (562,440),
+	TRIGGERDELAY 5 GREENWIN
+
+IF killed_TanEKill THEN
+	ORDER GEXPLO GOTO GreenSarge INMODE ATTACK THEN ATMODE ATTACK,
+	REMOVEOBJECT ExploBox,
+	PLACEOBJECT ExploBox GEXPLO
+	
+	
+
+IF get_GreenSarge_ExploBox THEN
+	DEPLOY GreenHalf201 ATMODE ATTACK,
+	SETAICONTROL GreenHalf201,
+	ORDER GreenHalf201 GOTO GREENASSAULT INMODE ATTACK THEN ATMODE DEFEND
+
+
+IF killed_GEXPLO THEN
+	REMOVEOBJECT ExploBox,
+	PLACEOBJECT ExploBox GEXPLO
+
+IF get_GreenSarge_HELLO1 THEN
+	SHOWBMP "D12mid.bmp",
+	TRIGGER GREYFRIENDS
+
+IF GREYFRIENDS THEN
+	DEPLOY GrayRifle1 ATMODE DEFEND,
+	SETUSERCONTROL GrayRifle1
+
