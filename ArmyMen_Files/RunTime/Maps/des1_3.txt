@@ -28,9 +28,7 @@ IF startup THEN
 	SETAICONTROL GreenRifle102,
 	SETAICONTROL GreenRifle103,
 	SETAICONTROL GDefender3,
-	SETAICONTROL GreenRifle5,
-	SETAICONTROL GreenRifle201
-	
+	SETAICONTROL GreenRifle5
 	
 	
 
